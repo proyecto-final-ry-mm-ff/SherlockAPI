@@ -1,0 +1,6 @@
+@SherlockAPI_HostAddress = http://localhost:5015
+
+GET {{SherlockAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
