@@ -29,7 +29,7 @@ namespace SherlockAPI.Controllers
         [HttpPost]
         public IActionResult createChat([FromBody] Chat chat)
         {
-           // Chat myChat = _chatService.Create(chat); hola
+           // Chat myChat = _chatService.Create(chat); hola como andas
             return Ok(chat.Name);
         }
     }
