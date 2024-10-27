@@ -14,12 +14,16 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+    app.MapControllers();
 }
 
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
-app.MapControllers();
+if (app.Environment.IsProduction())
+{
+    app.MapGroup("/api/v1").MapControllers();
+}
 
 app.Run();

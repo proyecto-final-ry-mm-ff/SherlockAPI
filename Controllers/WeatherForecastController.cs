@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace SherlockAPI.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("wheather")]
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
