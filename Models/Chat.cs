@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace SherlockAPI.Models
 {
     public class Chat
@@ -10,6 +12,13 @@ namespace SherlockAPI.Models
 
         // public string? Summary { get; set; }
 
+        public int Id { get; set; } = 0;
+
         public string? Name { get; set; }
+
+        public Chat()
+        {
+            this.Id = Id++;
+        }
     }
 }

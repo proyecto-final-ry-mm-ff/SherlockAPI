@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using SherlockAPI.Interfaces;
 using SherlockAPI.Models;
@@ -26,10 +27,20 @@ namespace SherlockAPI.Controllers
             return Ok(chats);
         }
 
+        [HttpGet]
+        [Route("new-instance")]
+        public IActionResult getNewInstance()
+        {
+            Chat myChat = new Chat();
+            myChat.Name = "Prueba 1";
+            return Ok(myChat);
+        }
+
+
         [HttpPost]
         public IActionResult createChat([FromBody] Chat chat)
         {
-           // Chat myChat = _chatService.Create(chat); hola como andas
+            // Chat myChat = _chatService.Create(chat); hola como andas
             return Ok(chat.Name);
         }
     }
