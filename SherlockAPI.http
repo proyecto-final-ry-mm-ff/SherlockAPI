@@ -4,3 +4,4 @@ GET {{SherlockAPI_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###
+POST
