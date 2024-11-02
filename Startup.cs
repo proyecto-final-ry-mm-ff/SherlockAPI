@@ -25,6 +25,7 @@ builder.Services.AddSwaggerGen();
 
 //TODO: Me gustaría que fuera más escalable, seguro hay una manera
 builder.Services.AddScoped<IChatService, ChatService>();
+builder.Services.AddScoped<IAuthService, AuthService>();
 
 var app = builder.Build();
 
