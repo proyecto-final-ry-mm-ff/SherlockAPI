@@ -37,7 +37,7 @@ namespace SherlockAPI.Controllers
         }
 
         [HttpGet]
-        [Route("identinty-questions")]
+        [Route("identity-questions")]
         public IActionResult getIdentityQuestions()
         {
             ClientIdentificationParameters cip = new ClientIdentificationParameters();
