@@ -12,13 +12,15 @@ namespace SherlockAPI.Models
 
         // public string? Summary { get; set; }
 
-        public int Id { get; set; } = 0;
+        public string Id { get; private set; }
 
         public string? Name { get; set; }
 
+        public static int GlobalChatId = 0;
+
         public Chat()
         {
-            this.Id = Id++;
+            this.Id =  $"_CHAT_{++GlobalChatId}";
         }
     }
 }
