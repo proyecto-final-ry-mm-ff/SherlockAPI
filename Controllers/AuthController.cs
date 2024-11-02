@@ -29,19 +29,21 @@ namespace SherlockAPI.Controllers
                 return Unauthorized("NO AUTH");
             }
 
-            ClientIdentificationParameters cip = new ClientIdentificationParameters();
-            cip.isRequired = true;
-            cip.DisplayOrder = 1;
-            cip.Name = "Nombre";
-            cip.Id = "1";
+            // ClientIdentificationParameters cip = new ClientIdentificationParameters();
+            // cip.isRequired = true;
+            // cip.DisplayOrder = 1;
+            // cip.Name = "Nombre";
+            // cip.Id = "1";
 
-            ClientIdentificationParameters cip2 = new ClientIdentificationParameters();
-            cip2.isRequired = true;
-            cip2.DisplayOrder = 2;
-            cip2.Name = "Celular";
-            cip2.Id = "2";
+            // ClientIdentificationParameters cip2 = new ClientIdentificationParameters();
+            // cip2.isRequired = true;
+            // cip2.DisplayOrder = 2;
+            // cip2.Name = "Celular";
+            // cip2.Id = "2";
 
-            var response = new { cip, cip2 };
+            // var response = new { cip, cip2 };
+
+            var response = new {Message = "Si, Ok"};
 
             return Ok(response);
         }
