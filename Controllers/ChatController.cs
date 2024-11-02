@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
+using SherlockAPI.Dtos;
 using SherlockAPI.Interfaces;
 using SherlockAPI.Models;
 
@@ -22,7 +23,6 @@ namespace SherlockAPI.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-
             var chats = _chatService.Get();
             return Ok(chats);
         }
@@ -31,9 +31,8 @@ namespace SherlockAPI.Controllers
         [Route("new-instance")]
         public IActionResult getNewInstance()
         {
-            Chat myChat = new Chat();
-            myChat.Name = "Prueba 1";
-            return Ok(myChat);
+            ChatDto chatDto = _chatService.Create();
+            return Ok(chatDto);
         }
 
         [HttpGet]
@@ -56,12 +55,5 @@ namespace SherlockAPI.Controllers
             return Ok(response);
         }
 
-
-        [HttpPost]
-        public IActionResult createChat([FromBody] Chat chat)
-        {
-            // Chat myChat = _chatService.Create(chat); hola como andas
-            return Ok(chat.Name);
-        }
     }
 }

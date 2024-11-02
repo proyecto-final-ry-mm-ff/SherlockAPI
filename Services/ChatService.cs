@@ -1,3 +1,4 @@
+using SherlockAPI.Dtos;
 using SherlockAPI.Interfaces;
 using SherlockAPI.Models;
 
@@ -7,7 +8,7 @@ public class ChatService : IChatService
 {
     private static readonly string[] Summaries = ["Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"];
 
-    public IEnumerable<Chat> Get()
+    public IEnumerable<ChatDto> Get()
     {
         // return Enumerable.Range(1, 5).Select(index => new Chat
         // {
@@ -19,8 +20,11 @@ public class ChatService : IChatService
         return [];
     }
 
-    public Chat Create(Chat chat)
+    public ChatDto Create()
     {
-        return chat;
+        Chat myChat = new Chat();
+        myChat.Name = "Prueba 1";
+        ChatDto chatDto = ChatDto.FromEntity(myChat);
+        return chatDto;
     }
 }

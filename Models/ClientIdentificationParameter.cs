@@ -1,6 +1,6 @@
 namespace SherlockAPI.Models
 {
-    public class ClientIdentificationParameters
+    public class ClientIdentificationParameter
     {
         // public DateOnly Date { get; set; }
 
