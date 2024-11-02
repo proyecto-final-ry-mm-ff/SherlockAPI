@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35312.102
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SherlockAPI", "SherlockAPI.csproj", "{59275CDC-2ECB-45EE-A0C4-1FC680352AA2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SherlockAPI", "SherlockAPI.csproj", "{59275CDC-2ECB-45EE-A0C4-1FC680352AA2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SherlockDomain", "..\SherlockDomain\SherlockDomain.csproj", "{BE423C8C-2716-4E31-8490-40475E7BF567}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SherlockSignalR", "..\SherlockSignalR\SherlockSignalR.csproj", "{06074CAB-E798-4BD8-9F87-2B4D7778F6E3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{59275CDC-2ECB-45EE-A0C4-1FC680352AA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{59275CDC-2ECB-45EE-A0C4-1FC680352AA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{59275CDC-2ECB-45EE-A0C4-1FC680352AA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE423C8C-2716-4E31-8490-40475E7BF567}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE423C8C-2716-4E31-8490-40475E7BF567}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE423C8C-2716-4E31-8490-40475E7BF567}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE423C8C-2716-4E31-8490-40475E7BF567}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06074CAB-E798-4BD8-9F87-2B4D7778F6E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06074CAB-E798-4BD8-9F87-2B4D7778F6E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06074CAB-E798-4BD8-9F87-2B4D7778F6E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06074CAB-E798-4BD8-9F87-2B4D7778F6E3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
