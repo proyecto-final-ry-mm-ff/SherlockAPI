@@ -2,20 +2,10 @@ namespace SherlockAPI.Models
 {
     public class ClientIdentificationParameter
     {
-        // public DateOnly Date { get; set; }
+        public string Id { get; set; }
+        public string Name { get; set; }
 
-        // public int TemperatureC { get; set; }
-
-        // public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-
-        // public string? Summary { get; set; }
-
-        //  { parameterId= 1, name= "Nombre", isRequired= true, displayOrder= 1 },
-
-        public string? Id { get; set; }
-        public string? Name { get; set; }
-
-        public bool? isRequired { get; set; }
-        public int? DisplayOrder { get; set; }
+        public bool IsRequired { get; set; }
+        public int DisplayOrder { get; set; }
     }
 }

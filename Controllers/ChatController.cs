@@ -39,19 +39,23 @@ namespace SherlockAPI.Controllers
         [Route("identity-questions")]
         public IActionResult getIdentityQuestions()
         {
-            ClientIdentificationParameters cip = new ClientIdentificationParameters();
-            cip.isRequired = true;
+            ClientIdentificationParameter cip = new ClientIdentificationParameter();
+            cip.IsRequired = true;
             cip.DisplayOrder = 1;
             cip.Name = "Nombre";
             cip.Id = "1";
 
-            ClientIdentificationParameters cip2 = new ClientIdentificationParameters();
-            cip2.isRequired = true;
+            ClientIdentificationParameter cip2 = new ClientIdentificationParameter();
+            cip2.IsRequired = true;
             cip2.DisplayOrder = 2;
             cip2.Name = "Celular";
             cip2.Id = "2";
 
-            var response = new { cip, cip2 };
+            ClientIdentificationParameterDto cipDto1 =  ClientIdentificationParameterDto.FromEntity(cip);
+            ClientIdentificationParameterDto cipDto2 = ClientIdentificationParameterDto.FromEntity(cip2);
+
+
+            var response = new { cipDto1, cipDto2 };
             return Ok(response);
         }
 
