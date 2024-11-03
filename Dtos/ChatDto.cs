@@ -1,12 +1,12 @@
-﻿using SherlockAPI.Models;
+﻿//using SherlockAPI.Models;
+using SherlockDomain.Entities;
 
 namespace SherlockAPI.Dtos
 {
     public class ChatDto
     {
-        public required string Id { get; set; }
+        public int Id { get; set; }
 
-        public string? Name { get; set; }
 
         public List<MessageDto> Messages { get; set; } = [];
 
@@ -16,7 +16,6 @@ namespace SherlockAPI.Dtos
             return new ChatDto()
             {
                 Id = chat.Id,
-                Name = chat.Name,
                 Messages = chat.Messages.Select(MessageDto.FromEntity).ToList()
             };
         }

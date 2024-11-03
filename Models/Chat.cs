@@ -5,7 +5,7 @@ namespace SherlockAPI.Models
     public class Chat
     {
 
-        public string Id { get; private set; }
+        public int Id { get; private set; }
 
         public string? Name { get; set; }
 
@@ -15,7 +15,7 @@ namespace SherlockAPI.Models
 
         public Chat()
         {
-            this.Id = $"_CHAT_{++GlobalChatId}";
+            this.Id = ++GlobalChatId;
         }
     }
 }

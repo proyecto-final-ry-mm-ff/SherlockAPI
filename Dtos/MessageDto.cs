@@ -1,12 +1,14 @@
-using SherlockAPI.Models;
+//using SherlockAPI.Models;
+
+using SherlockDomain.Entities;
 
 namespace SherlockAPI.Dtos
 {
     public class MessageDto
     {
 
-        public required string Id { get; set; }
-        public required string ChatId { get; set; }
+        public int Id { get; set; }
+        public int ChatId { get; set; }
         public string? Content { get; set; }
         public DateTime TimeStamp { get; private set; }
       //  public string? OperatorId { get; set; }

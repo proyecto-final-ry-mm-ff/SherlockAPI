@@ -1,6 +1,7 @@
 using SherlockAPI.Dtos;
 using SherlockAPI.Interfaces;
-using SherlockAPI.Models;
+//using SherlockAPI.Models;
+using SherlockDomain.Entities;
 
 namespace SherlockAPI.Services;
 
@@ -23,7 +24,6 @@ public class ChatService : IChatService
     public ChatDto Create()
     {
         Chat myChat = new Chat();
-        myChat.Name = "Prueba 1";
         ChatDto chatDto = ChatDto.FromEntity(myChat);
         return chatDto;
     }
