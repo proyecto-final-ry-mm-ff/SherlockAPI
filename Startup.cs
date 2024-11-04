@@ -1,11 +1,17 @@
 using SherlockAPI.Interfaces;
 using SherlockAPI.Services;
+using SherlockInfraestructure.Extensions;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
+
+
+
+builder.Services.AddInfraestructure(builder.Configuration);
 
 builder.Services.AddCors(options =>
 {
