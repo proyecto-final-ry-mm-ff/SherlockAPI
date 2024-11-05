@@ -1,10 +1,11 @@
-using SherlockAPI.Dtos;
-using SherlockAPI.Models;
+﻿using SherlockDomain.Entities;
 
-namespace SherlockAPI.Interfaces;
-
-public interface IChatService
+namespace SherlockAPI.Interfaces
 {
-    IEnumerable<ChatDto> Get();
-    ChatDto Create();
+    public interface IChatService
+    {
+        Task<Chat?> GetById(int id);
+
+        Task<int> CreateNewInstance();
+    }
 }

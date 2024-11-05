@@ -20,19 +20,25 @@ namespace SherlockAPI.Controllers
             _chatService = chatService;
         }
 
-        [HttpGet]
-        public IActionResult Get()
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById([FromRoute] int id)
         {
-            var chats = _chatService.Get();
-            return Ok(chats);
+            var chat = await _chatService.GetById(id);
+
+            if (chat is null)
+            {
+                return NotFound();
+            }
+            return Ok(chat);
         }
 
         [HttpGet]
         [Route("new-instance")]
-        public IActionResult getNewInstance()
+        public  async Task<IActionResult> getNewInstance()
         {
-            ChatDto chatDto = _chatService.Create();
-            return Ok(chatDto);
+            int chatId = await _chatService.CreateNewInstance();
+            Response.Headers.AccessControlExposeHeaders = "Location";
+            return CreatedAtAction(nameof(GetById), new { id=  chatId }, null);
         }
 
         [HttpGet]
@@ -51,7 +57,7 @@ namespace SherlockAPI.Controllers
             cip2.Name = "Celular";
             cip2.Id = "2";
 
-            ClientIdentificationParameterDto cipDto1 =  ClientIdentificationParameterDto.FromEntity(cip);
+            ClientIdentificationParameterDto cipDto1 = ClientIdentificationParameterDto.FromEntity(cip);
             ClientIdentificationParameterDto cipDto2 = ClientIdentificationParameterDto.FromEntity(cip2);
 
 

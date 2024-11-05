@@ -2,24 +2,12 @@ using SherlockAPI.Dtos;
 using SherlockAPI.Interfaces;
 //using SherlockAPI.Models;
 using SherlockDomain.Entities;
+using SherlockDomain.Repositories;
 
 namespace SherlockAPI.Services;
 
-public class ChatService : IChatService
+public class ChatService(IChatRepository chatRepository) : IChatService
 {
-    private static readonly string[] Summaries = ["Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"];
-
-    public IEnumerable<ChatDto> Get()
-    {
-        // return Enumerable.Range(1, 5).Select(index => new Chat
-        // {
-        //     Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-        //     TemperatureC = Random.Shared.Next(-20, 55),
-        //     Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-        // })
-        // .ToArray();
-        return [];
-    }
 
     public ChatDto Create()
     {
@@ -27,4 +15,21 @@ public class ChatService : IChatService
         ChatDto chatDto = ChatDto.FromEntity(myChat);
         return chatDto;
     }
+
+    public async Task<int> CreateNewInstance()
+    {
+        //TODO esto deberia ser un DTO   
+        Chat adHocChat = new Chat();
+        int chatId = await chatRepository.CreateNewInstanceAsync(adHocChat);
+        return chatId;
+
+    }
+
+    public async Task<Chat?> GetById(int id)
+    {
+       var chat  = await  chatRepository.GetByIdAsync(id);
+        return chat;
+    }
+
+
 }
